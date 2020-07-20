@@ -23,14 +23,6 @@
 #define NOTE_DH6 1322
 #define NOTE_DH7 1484 
 
-#define WHOLE 1 
-#define HALF 0.5 
-#define QUARTER 0.25 
-#define EIGHTH 0.25 
-#define SIXTEENTH 0.625  
-
-
-
 int tune[] =  
 {  
 NOTE_D0,NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D3,NOTE_D1,
