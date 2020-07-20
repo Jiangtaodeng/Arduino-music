@@ -1,2 +1,2 @@
 # Arduino-music
-using Wi-fi to control the buzzer in Arduino.
+using Wi-fi to control the buzzer by Arduino.
