@@ -126,8 +126,8 @@ int tonePin=5;//蜂鸣器pin
 
 #include <ESP8266WiFi.h>
 #ifndef STASSID
-#define STASSID "HUAWEI nova 3"
-#define STAPSK  "66666666"
+#define STASSID "your ssid"
+#define STAPSK  "ssid's password"
 #endif
 
 const char* ssid = STASSID;
@@ -137,7 +137,7 @@ WiFiServer server(80);
 
 void setup()
 {
-  length = sizeof(tune)/sizeof(tune[0]);
+  length = sizeof(tune)/sizeof(tune[0]);//定义音符个数
   pinMode(tonePin, OUTPUT);
   
   Serial.begin(115200);
