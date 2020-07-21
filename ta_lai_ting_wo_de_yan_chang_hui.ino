@@ -72,7 +72,7 @@ NOTE_D1,NOTE_D0,NOTE_DL6,NOTE_D1,
 NOTE_D3,NOTE_D2,NOTE_D2,NOTE_D2,NOTE_D2,NOTE_D0,NOTE_DL5,NOTE_DL5,NOTE_DL6,NOTE_D1,NOTE_D2,NOTE_D1,
 //NOTE_D0,
 }
-;//这部分就是整首曲子的音符部分，用了一个序列定义为tune，整数
+;//这部分就是整首曲子的音符部分
 
 float duration[]= 
 
@@ -121,10 +121,9 @@ float duration[]=
 1+1+1,0.5,0.25,0.25,
 0.25,0.25,0.25,0.25,1,0.5,0.25,0.25,0.25,0.25,0.25,0.25,
 //1+1+1+1,
-};//这部分是整首曲子的节拍部分，也定义个序列duration，浮点（数组的个数和前面音符的个数是一样的，一一对应么）
+};//这部分是整首曲子的节拍部分(数组的个数和前面音符的个数一样并一一对应）
 
-int length;//这里定义一个变量，后面用来表示共有多少个音符
-
+int length;//音符长度
 int tonePin=5;//蜂鸣器的pin 
 
 
@@ -143,9 +142,9 @@ void loop()
 
   for(int x=0;x<length;x++)//循环音符的次数
   {  
-    tone(tonePin,tune[x]);//此函数依次播放tune序列里的数组，即每个 音符
+    tone(tonePin,tune[x]);
 
- delay(1000*duration[x]);//每个音符持续的时间，即节拍duration，是调整时间的越大，曲子速度越慢，越小曲子速度越快，自己掌握吧
+ delay(1000*duration[x]);//每个音符持续的时间
 
 noTone(tonePin);//停止当前音符，进入下一音符
 
