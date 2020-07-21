@@ -123,7 +123,7 @@ float duration[]=
 
 int length;//音符个数
 int tonePin=5;//蜂鸣器pin 
-
+//配置WIFI
 #include <ESP8266WiFi.h>
 #ifndef STASSID
 #define STASSID "your ssid"
@@ -139,7 +139,7 @@ void setup()
 {
   length = sizeof(tune)/sizeof(tune[0]);//定义音符个数
   pinMode(tonePin, OUTPUT);
-  
+  //打开webserver及连接WiFi
   Serial.begin(115200);
   digitalWrite(tonePin, 0);
 
@@ -175,6 +175,7 @@ void loop()
   Serial.println(req);
   
   int val;
+  //判断此时蜂鸣器应处于的状态
   if (req.indexOf(F("/gpio/0")) != -1) {
     val = 0;
     digitalWrite(tonePin, 0);
@@ -188,7 +189,7 @@ void loop()
   while (client.available()) {
     client.read();
   }
-
+  //客户机反馈
   client.print(F("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html>\r\n music is now "));
   client.print((val) ? F("on") : F("off"));
   client.print(F("<br><br>Click <a href='http://"));
